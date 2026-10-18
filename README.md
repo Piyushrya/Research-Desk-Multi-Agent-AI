@@ -136,21 +136,15 @@ The CLI workflow saves its output to `research_report.txt`.
 
 ## Limitations
 
-- Results depend on source quality and AI-generated content.
-- Some websites may block automated scraping.
-- Webpage extraction is limited to 3,000 characters per page.
-- The critic does not independently verify every claim.
+- Results depend on source quality.
+- Some websites block scraping.
+- Claims are not independently verified.
 
 ## Future Improvements
 
-- Improve source verification and citations.
-- Add persistent research history.
-- Support PDF and DOCX exports.
-- Introduce automated testing and report revision.
-
-## Author
-
-**Piyush Arya**
+- Improve source citations.
+- Add persistent history and PDF exports.
+- Add testing and report refinement.
 
 ## License
 
