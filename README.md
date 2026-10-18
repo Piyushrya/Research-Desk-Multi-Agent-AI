@@ -155,4 +155,4 @@ The CLI workflow saves its output to `research_report.txt`.
 
 ## License
 
-No license has been specified. Add a `LICENSE` file if you decide to publish the project under an open-source license.
+This project is licensed under the MIT License. See the LICENSE file for details.
