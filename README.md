@@ -1,23 +1,18 @@
 # Research Desk: Multi-Agent AI Research Assistant
 
-Research Desk is an AI-powered research assistant that transforms a topic into a structured, source-backed research report. It uses four cooperating AI stages: Search, Reader, Writer, and Critic.
+Research Desk is an AI-powered research assistant that transforms a topic into a structured, source-backed report using four AI stages: Search, Reader, Writer, and Critic.
 
-Built with Python, LangChain, Google Gemini, Tavily, and Streamlit, the project automates web research, webpage extraction, report generation, and quality review through an interactive web application or command-line workflow.
-
-**Live Demo:** [Research Desk](https://multi-agent-ai-v5erfwsyrbxzcvyxfehxyk.streamlit.app/)
-
-**GitHub Repository:** [multi-agent-ai](https://github.com/piyushrya/multi-agent-ai)
+Built with Python, LangChain, Google Gemini, Tavily, and Streamlit, it automates web research, content extraction, report generation, and quality review.
 
 ## Features
 
-- **Multi-Agent Research Workflow:** Four stages work together to search, read, write, and review research.
-- **Web Search:** Uses the Tavily API to discover relevant sources.
-- **Webpage Extraction:** Uses Requests and BeautifulSoup to extract readable content from webpages.
-- **Structured Reports:** Generates reports with an introduction, key findings, conclusion, and sources.
-- **AI-Powered Critic:** Reviews the report and provides a score, strengths, areas for improvement, and a verdict.
-- **Interactive Dashboard:** Built with Streamlit, featuring progress updates, research history, and tabbed results.
-- **Downloadable Results:** Download the final report, critic review, search results, and extracted source notes.
-- **Command-Line Interface:** Run research from the terminal and save the output to `research_report.txt`.
+- **Multi-Agent Workflow:** Four stages handle search, reading, writing, and review.
+- **Web Research:** Finds sources using Tavily and extracts content with BeautifulSoup.
+- **Report Generation:** Creates structured reports with key findings and sources.
+- **AI Review:** Evaluates reports and suggests improvements.
+- **Streamlit Dashboard:** Displays progress, research history, and results.
+- **Export Results:** Download reports, reviews, search results, and source notes.
+- **CLI Support:** Run research from the terminal.
 
 ## How It Works
 
@@ -37,45 +32,38 @@ Writer (Google Gemini)
 Critic (Google Gemini)
       |
       v
-Research Report + Quality Review
-      |
-      v
-Streamlit Dashboard / Command Line
+Research Report + Review
 ```
 
-| Stage | Component | Responsibility |
-|---|---|---|
-| 1 | Search Agent | Finds relevant web sources and collects search results. |
-| 2 | Reader Agent | Extracts useful information from selected webpages. |
-| 3 | Writer | Generates a structured research report from the collected information. |
-| 4 | Critic | Reviews the report and identifies strengths and areas for improvement. |
-
-The prompts encourage the agents to avoid inventing facts or sources and to acknowledge insufficient evidence. AI-generated information should still be verified against the original sources.
+| Stage | Responsibility |
+|---|---|
+| Search | Finds relevant web sources. |
+| Reader | Extracts useful webpage content. |
+| Writer | Generates the research report. |
+| Critic | Reviews quality and suggests improvements. |
 
 ## Technology Stack
 
-- **Programming Language:** Python
-- **Large Language Model:** Google Gemini
-- **AI Agent Framework:** LangChain
-- **Web Search:** Tavily Search API
-- **Web Scraping:** Requests and BeautifulSoup
-- **Frontend:** Streamlit
-- **Environment Variables:** python-dotenv
-- **Version Control:** Git and GitHub
-- **Deployment:** Streamlit Community Cloud
+- Python
+- LangChain
+- Google Gemini
+- Tavily Search API
+- Requests and BeautifulSoup
+- Streamlit
+- python-dotenv
 
 ## Project Structure
 
 ```text
 multi-agent-ai/
 ├── app.py              # Streamlit web application
-├── agents.py           # Agent setup, writer and critic chains
-├── tools.py            # Web search and webpage scraping tools
-├── main.py             # Command-line research workflow
+├── agents.py           # AI agents and report generation
+├── tools.py            # Search and scraping tools
+├── main.py             # Command-line workflow
 ├── pipeline.py         # Alternative research pipeline
-├── requirements.txt    # Project dependencies
-├── .env                # Local API keys (not committed)
-├── .gitignore          # Files excluded from Git
+├── requirements.txt    # Dependencies
+├── .env                # API keys (not committed)
+├── .gitignore          # Git exclusions
 └── README.md           # Project documentation
 ```
 
@@ -83,7 +71,7 @@ multi-agent-ai/
 
 ### Prerequisites
 
-- Python 3.10 or a compatible version supported by the dependencies
+- Python 3.10 or a compatible version
 - Google Gemini API key
 - Tavily API key
 - Git
@@ -97,14 +85,14 @@ cd multi-agent-ai
 
 ### 2. Create a Virtual Environment
 
-**Windows PowerShell:**
+**Windows PowerShell**
 
 ```powershell
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 ```
 
-**macOS / Linux:**
+**macOS / Linux**
 
 ```bash
 python -m venv .venv
@@ -113,8 +101,6 @@ source .venv/bin/activate
 
 ### 3. Install Dependencies
 
-Make sure the dependency file is named `requirements.txt`.
-
 ```bash
 python -m pip install --upgrade pip
 pip install -r requirements.txt
@@ -122,83 +108,58 @@ pip install -r requirements.txt
 
 ### 4. Configure API Keys
 
-Create a `.env` file in the project root and add your own API credentials:
+Create a `.env` file in the project root:
 
 ```env
 GOOGLE_API_KEY=your_google_api_key
 TAVILY_API_KEY=your_tavily_api_key
 ```
 
-Get your API keys here:
+Get your keys from [Google AI Studio](https://aistudio.google.com/apikey) and [Tavily](https://tavily.com).
 
-- Google Gemini: https://aistudio.google.com/apikey
-- Tavily: https://tavily.com
+**Security:** Never commit real API keys to GitHub. Add `.env` to `.gitignore`.
 
-**Security:** Never upload your real API keys to GitHub or share them publicly. Keep `.env` in your `.gitignore` file.
+### 5. Run the Application
 
-### 5. Run the Streamlit Application
+Start the Streamlit dashboard:
 
 ```bash
 python -m streamlit run app.py
 ```
 
-Open the local URL displayed in the terminal, usually:
-
-`http://localhost:8501`
-
-### 6. Run the Command-Line Application
-
-To run research from the terminal:
+To run the command-line workflow instead:
 
 ```bash
 python main.py
 ```
 
-Enter your research topic when prompted. The workflow generates a report and critic review and saves the output to `research_report.txt`.
+The CLI workflow saves its output to `research_report.txt`.
 
 ## How to Use
 
-1. Open the Research Desk application.
-2. Enter the topic you want to research.
-3. Select a research depth from the available options.
-4. Start the research workflow.
-5. Follow the progress through the four stages.
-6. View the final report, critic review, search results, and extracted source content.
-7. Download the results for future reference.
-
-## Live Demo
-
-Try the deployed application:
-
-**[Launch Research Desk](https://multi-agent-ai-v5erfwsyrbxzcvyxfehxyk.streamlit.app/)**
-
-The application is deployed using Streamlit Community Cloud.
+1. Enter a research topic.
+2. Select the research depth.
+3. Start the workflow.
+4. Review the generated report, critic feedback, and sources.
+5. Download the results.
 
 ## Limitations
 
-- Research quality depends on the available web sources and AI-generated content.
-- Some websites may block automated requests or require JavaScript.
-- Extracted webpage content is limited to the first 3,000 characters per page.
-- The critic reviews the generated report but does not independently verify every claim against original sources.
-- Research history is stored in Streamlit session state and is not permanently saved to a database.
-- API rate limits, network issues, or service interruptions may affect execution.
+- Results depend on source quality and AI-generated content.
+- Some websites may block scraping.
+- The critic does not independently verify every claim.
 
 ## Future Improvements
 
-- Add more reliable source verification and claim-level citations.
-- Introduce automated tests and research-quality benchmarks.
-- Improve webpage extraction and URL validation.
-- Add persistent storage for research history.
-- Support PDF and DOCX report exports.
-- Implement an optional report-revision cycle based on critic feedback.
-- Add research caching to reduce repeated API calls.
+- Improve source verification and citations.
+- Add persistent research history.
+- Support PDF and DOCX exports.
+- Add automated testing and report revision.
 
 ## Author
 
 **Piyush Arya**
 
-GitHub: [@piyushrya](https://github.com/piyushrya)
-
 ## License
 
-No license has been specified yet. Add a `LICENSE` file if you intend to distribute the project under a particular open-source license.
+No license has been specified yet. Add a `LICENSE` file if you choose to distribute the project under an open-source license.
