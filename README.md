@@ -134,7 +134,9 @@ python main.py
 
 The CLI workflow saves its output to `research_report.txt`.
 
-[Research Desk Application](research-desk.png)
+## Application Preview
+
+![Research Desk Application](research-desk.png)
 
 ## Limitations
 
