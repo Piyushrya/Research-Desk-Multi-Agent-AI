@@ -134,10 +134,6 @@ python main.py
 
 The CLI workflow saves its output to `research_report.txt`.
 
-## Application Preview
-
-![Research Desk Application](research-desk.png)
-
 ## Limitations
 
 - Results depend on source quality and AI-generated content.
