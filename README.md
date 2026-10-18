@@ -140,7 +140,6 @@ The CLI workflow saves its output to `research_report.txt`.
 - Some websites may block automated scraping.
 - Webpage extraction is limited to 3,000 characters per page.
 - The critic does not independently verify every claim.
-- Research history is temporary and not stored in a database.
 
 ## Future Improvements
 
