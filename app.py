@@ -43,7 +43,7 @@ st.markdown(
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
     :root { --ink:#18233b; --muted:#71809a; --paper:#f5f7ff; --pink:#a78bfa; --line:#dfe6f4; --blue:#536dfe; }
     html, body, [class*="css"] { font-family:'DM Sans',sans-serif; }
-    .stApp { background:radial-gradient(ellipse at 8% 5%,rgba(116,143,255,.12),transparent 30%),radial-gradient(ellipse at 92% 22%,rgba(168,139,250,.12),transparent 28%),#f6f8ff; color:var(--ink); }
+    .stApp { background:#f7f8fb; color:var(--ink); }
     /* Remove Streamlit's fixed top chrome so it cannot overlap the custom website header. */
     [data-testid="stHeader"] { display:none !important; height:0 !important; min-height:0 !important; }
     [data-testid="stToolbar"] { display:none !important; }
@@ -70,17 +70,17 @@ st.markdown(
     .site-logo span { color:#6578ff; }
     .nav-links { display:flex; gap:23px; align-items:center; color:#34415d !important; opacity:1 !important; } .nav-links a { color:#34415d !important; opacity:1 !important; text-decoration:none; font-weight:600; transition:color .2s,transform .2s; } .nav-links a:hover { color:#536dfe; transform:translateY(-1px); }
     .nav-contact { opacity:1 !important; border:1px solid #dce3f3; padding:8px 13px; border-radius:30px; color:#34415d !important; background:rgba(255,255,255,.7); }
-    .hero { position:relative; isolation:isolate; overflow:hidden; min-height:455px; display:flex; align-items:center; padding:clamp(2rem,5vw,4.2rem); margin:0 0 2.3rem; color:white; background-image:radial-gradient(circle at 78% 28%,rgba(105,130,255,.32),transparent 23%),radial-gradient(circle at 88% 82%,rgba(111,76,220,.30),transparent 28%),linear-gradient(118deg,#080f26 0%,#111d43 48%,#20265b 100%); background-size:cover; background-position:center; box-shadow:0 18px 50px rgba(47,65,130,.17); border-radius:8px; }
-    .hero:after { content:''; position:absolute; z-index:-1; right:5%; top:8%; width:310px; height:310px; border:1px solid rgba(166,190,255,.6); border-radius:50%; box-shadow:0 0 0 24px rgba(135,157,255,.10),0 0 0 54px rgba(135,157,255,.08),0 0 0 90px rgba(135,157,255,.05); }
-    .hero-content { position:relative; z-index:1; max-width:680px; }
-    .hero-topline { display:inline-flex; align-items:center; gap:9px; color:#fff; text-transform:uppercase; letter-spacing:2px; font-size:.64rem; font-weight:700; margin-bottom:1.5rem; }
-    .hero-dot { width:7px; height:7px; border-radius:50%; background:#83e7ff; display:inline-block; box-shadow:0 0 14px #83e7ff; }
-    .hero-title { color:#fff; font-family:'Manrope',sans-serif; font-size:clamp(2.8rem,6.2vw,5.3rem); font-weight:800; line-height:.98; letter-spacing:-3px; margin:0; max-width:700px; text-shadow:0 2px 20px rgba(0,0,0,.08); }
-    .hero-title span { color:#a9c5ff; }
-    .hero-description { color:rgba(255,255,255,.9); font-size:.9rem; line-height:1.8; max-width:470px; margin-top:1.2rem; }
-    .hero-bottom { display:flex; flex-wrap:wrap; gap:9px; align-items:center; margin-top:1.5rem; color:white; font-size:.68rem; font-weight:600; }
-    .hero-pill { border:1px solid rgba(255,255,255,.48); background:rgba(255,255,255,.13); padding:8px 12px; border-radius:30px; backdrop-filter:blur(8px); }
-    .hero-note { margin-top:1.2rem; color:rgba(255,255,255,.78); font-size:.62rem; letter-spacing:1.5px; text-transform:uppercase; }
+    .hero { position:relative; display:grid; grid-template-columns:minmax(0,1.5fr) minmax(190px,.7fr); align-items:center; gap:2rem; min-height:0; padding:clamp(1.5rem,4vw,3.2rem); margin:0 0 2.4rem; color:#20283b; background:#fff; border:1px solid #e3e7ef; border-radius:18px; box-shadow:0 14px 40px rgba(33,47,86,.045); }
+    .hero:after { content:none; }
+        .hero-content { position:relative; z-index:1; max-width:680px; }
+    .hero-topline { display:inline-flex; align-items:center; gap:9px; color:#5265d8; text-transform:uppercase; letter-spacing:1.6px; font-size:.68rem; font-weight:800; margin-bottom:1.1rem; }
+    .hero-dot { width:7px; height:7px; border-radius:50%; background:#5265d8; display:inline-block; }
+    .hero-title { color:#20283b; font-family:'Manrope',sans-serif; font-size:clamp(2.8rem,6.2vw,5.3rem); font-weight:800; line-height:.98; letter-spacing:-3px; margin:0; max-width:700px; text-shadow:0 2px 20px rgba(0,0,0,.08); }
+    .hero-title span { color:#5265d8; }
+    .hero-description { color:#68738a; font-size:.9rem; line-height:1.8; max-width:470px; margin-top:1.2rem; }
+    .hero-bottom { display:flex; flex-wrap:wrap; gap:9px; align-items:center; margin-top:1.5rem; color:#39445e; font-size:.68rem; font-weight:600; }
+    .hero-pill { border:1px solid #e3e7ef; background:#f5f6fa; padding:8px 12px; border-radius:8px; }
+    .hero-note { margin-top:1.2rem; color:#7780a6; font-size:.62rem; letter-spacing:1.5px; text-transform:uppercase; }
     .section-heading { font-family:'Manrope',sans-serif; font-size:1.45rem; font-weight:800; color:#292528; margin:1.8rem 0 1rem; letter-spacing:-.7px; }
     .section-heading span { color:#6578ff; }
     .agent-card { position:relative; background:rgba(255,255,255,.68); border:0; border-top:2px solid #8b9bff; border-radius:0; padding:1rem .4rem 1.2rem; min-height:145px; height:100%; box-shadow:none; transition:transform .2s ease; }
@@ -94,7 +94,7 @@ st.markdown(
     [data-testid="stForm"] textarea { min-height:112px; padding:14px 16px !important; line-height:1.55; }
     [data-testid="stForm"] div[data-baseweb="select"] > div { min-height:48px; }
     [data-testid="stForm"] div.stFormSubmitButton > button { margin-top:.2rem; min-height:3.1rem; border-radius:7px; }
-    [data-testid="stVerticalBlockBorderWrapper"] { border:0 !important; background:transparent !important; }
+    [data-testid="stVerticalBlockBorderWrapper"] { border-color:#e3e7ef !important; background:transparent !important; border-radius:14px; }
     .panel { border:1px solid #e0e7f7; background:#fff; border-radius:5px; padding:1.4rem; margin:.5rem 0 1rem; box-shadow:0 8px 24px rgba(40,20,30,.025); }
     .muted { color:#8a7f82; font-size:.88rem; }
     .status-line { color:#536dfe; font-size:.84rem; font-weight:700; }
@@ -114,66 +114,6 @@ st.markdown(
     .footer a { color:#d87f8d; text-decoration:none; font-weight:700; }
     .footer a:hover { color:#b75f6e; text-decoration:underline; }
     @media (max-width:700px) { [data-testid="stMainBlockContainer"] { padding:1.25rem 1rem 2rem !important; } [data-testid="stForm"] { padding:1rem !important; margin:.5rem 0 1.25rem; } .announcement { margin:0 auto 10px; padding:7px 12px; font-size:8px; letter-spacing:.8px; } .site-nav { padding:12px 0 14px; flex-wrap:wrap; } .nav-links { gap:10px; } .hero { min-height:390px; padding:1.5rem; background-position:center; } .hero-title { letter-spacing:-1.8px; font-size:clamp(2.7rem,12vw,4rem); } .hero:after { right:-190px; } }
-    
-    /* FINAL HEADER FIX: prevent Streamlit chrome from overlaying the custom header */
-    header[data-testid="stHeader"],
-    [data-testid="stHeader"],
-    [data-testid="stToolbar"],
-    [data-testid="stDecoration"] {
-        display: none !important;
-        visibility: hidden !important;
-        height: 0 !important;
-        min-height: 0 !important;
-        opacity: 0 !important;
-        pointer-events: none !important;
-    }
-    [data-testid="stAppViewContainer"],
-    [data-testid="stAppViewContainer"] > .main,
-    section.main {
-        padding-top: 0 !important;
-        margin-top: 0 !important;
-        overflow: visible !important;
-    }
-    [data-testid="stMainBlockContainer"] {
-        padding-top: 1.25rem !important;
-        margin-top: 0 !important;
-    }
-    /* Keep the custom announcement and navigation fully opaque and readable */
-    .announcement {
-        position: relative !important;
-        z-index: 10 !important;
-        opacity: 1 !important;
-        color: #4659bd !important;
-        background: #eef1ff !important;
-        margin-top: 0 !important;
-    }
-    .site-nav {
-        position: relative !important;
-        z-index: 10 !important;
-        opacity: 1 !important;
-        filter: none !important;
-        color: #243451 !important;
-        background: #f6f8ff !important;
-        margin-top: 0 !important;
-    }
-    .site-nav * {
-        opacity: 1 !important;
-        filter: none !important;
-    }
-    .site-logo, .site-logo span,
-    .nav-links, .nav-links a, .nav-contact {
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
-    .site-logo { color: #17233b !important; }
-    .site-logo span { color: #536dfe !important; }
-    .nav-links, .nav-links a { color: #34415d !important; }
-    .nav-contact {
-        color: #34415d !important;
-        background: #ffffff !important;
-        border-color: #dce3f3 !important;
-    }
-
     </style>
 
     """,
@@ -437,17 +377,21 @@ st.markdown(
     """
     <div class="hero">
         <div class="hero-content">
-            <div class="hero-topline"><span class="hero-dot"></span> GOOD QUESTIONS DESERVE BETTER ANSWERS</div>
+            <div class="hero-topline"><span class="hero-dot"></span> A CLEARER PATH FROM QUESTION TO INSIGHT</div>
             <div class="hero-title">Research<br>with <span>intelligence.</span></div>
-            <div class="hero-description">
-                An AI-powered research workspace that searches the web, reads source material, synthesizes findings, and reviews the final report—so you can move from question to insight.
-            </div>
+            <div class="hero-description">An AI-powered research workspace that searches the web, reads source material, synthesizes findings, and reviews the final report—so you can move from question to insight.</div>
             <div class="hero-bottom">
-                <span class="hero-pill">✦ Multi-agent workflow</span>
-                <span class="hero-pill">↗ Web-grounded research</span>
-                <span class="hero-pill">◎ AI-assisted synthesis</span>
+                <span class="hero-pill">Multi-agent workflow</span>
+                <span class="hero-pill">Web-grounded research</span>
+                <span class="hero-pill">AI-assisted synthesis</span>
             </div>
-            <div class="hero-note">SEARCH · READ · SYNTHESIZE · REFINE</div>
+        </div>
+        <div style="background:#f5f6ff;border:1px solid #e5e8ff;border-radius:14px;padding:1.25rem">
+            <div style="color:#7780a6;font-size:.65rem;font-weight:800;letter-spacing:1.5px;margin-bottom:.7rem">THE WORKFLOW</div>
+            <div style="padding:.65rem 0;border-bottom:1px solid #e5e8f7;color:#39445e;font-weight:600;font-size:.83rem">01 &nbsp; Search the web</div>
+            <div style="padding:.65rem 0;border-bottom:1px solid #e5e8f7;color:#39445e;font-weight:600;font-size:.83rem">02 &nbsp; Read source material</div>
+            <div style="padding:.65rem 0;border-bottom:1px solid #e5e8f7;color:#39445e;font-weight:600;font-size:.83rem">03 &nbsp; Synthesize findings</div>
+            <div style="padding:.65rem 0;color:#39445e;font-weight:600;font-size:.83rem">04 &nbsp; Review the report</div>
         </div>
     </div>
     """,
