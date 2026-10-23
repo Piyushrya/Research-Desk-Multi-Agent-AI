@@ -1,3 +1,14 @@
+import os
+import streamlit as st
+
+# Load deployed Streamlit Secrets into environment variables
+for key in ("TAVILY_API_KEY", "GOOGLE_API_KEY"):
+    try:
+        value = st.secrets.get(key)
+        if value:
+            os.environ[key] = str(value)
+    except (KeyError, FileNotFoundError):
+        pass
 import time
 import traceback
 from datetime import datetime
