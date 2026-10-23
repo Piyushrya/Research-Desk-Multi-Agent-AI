@@ -114,6 +114,66 @@ st.markdown(
     .footer a { color:#d87f8d; text-decoration:none; font-weight:700; }
     .footer a:hover { color:#b75f6e; text-decoration:underline; }
     @media (max-width:700px) { [data-testid="stMainBlockContainer"] { padding:1.25rem 1rem 2rem !important; } [data-testid="stForm"] { padding:1rem !important; margin:.5rem 0 1.25rem; } .announcement { margin:0 auto 10px; padding:7px 12px; font-size:8px; letter-spacing:.8px; } .site-nav { padding:12px 0 14px; flex-wrap:wrap; } .nav-links { gap:10px; } .hero { min-height:390px; padding:1.5rem; background-position:center; } .hero-title { letter-spacing:-1.8px; font-size:clamp(2.7rem,12vw,4rem); } .hero:after { right:-190px; } }
+    
+    /* FINAL HEADER FIX: prevent Streamlit chrome from overlaying the custom header */
+    header[data-testid="stHeader"],
+    [data-testid="stHeader"],
+    [data-testid="stToolbar"],
+    [data-testid="stDecoration"] {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        min-height: 0 !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+    [data-testid="stAppViewContainer"],
+    [data-testid="stAppViewContainer"] > .main,
+    section.main {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+        overflow: visible !important;
+    }
+    [data-testid="stMainBlockContainer"] {
+        padding-top: 1.25rem !important;
+        margin-top: 0 !important;
+    }
+    /* Keep the custom announcement and navigation fully opaque and readable */
+    .announcement {
+        position: relative !important;
+        z-index: 10 !important;
+        opacity: 1 !important;
+        color: #4659bd !important;
+        background: #eef1ff !important;
+        margin-top: 0 !important;
+    }
+    .site-nav {
+        position: relative !important;
+        z-index: 10 !important;
+        opacity: 1 !important;
+        filter: none !important;
+        color: #243451 !important;
+        background: #f6f8ff !important;
+        margin-top: 0 !important;
+    }
+    .site-nav * {
+        opacity: 1 !important;
+        filter: none !important;
+    }
+    .site-logo, .site-logo span,
+    .nav-links, .nav-links a, .nav-contact {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    .site-logo { color: #17233b !important; }
+    .site-logo span { color: #536dfe !important; }
+    .nav-links, .nav-links a { color: #34415d !important; }
+    .nav-contact {
+        color: #34415d !important;
+        background: #ffffff !important;
+        border-color: #dce3f3 !important;
+    }
+
     </style>
 
     """,
